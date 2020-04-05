@@ -13,5 +13,5 @@ The driver comprises two classes:
 `SPIFlashFS`
 
 * `blockdevice` driver
-* It shoukld be possible to mount this as a system storage instance using `storage.VfsFat` (THIS DOESN'T CURRENTLY WORK)
+* It should be possible to mount this as a system storage instance using `storage.VfsFat` (THIS DOESN'T CURRENTLY WORK)
 
