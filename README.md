@@ -15,3 +15,4 @@ The driver comprises two classes:
 * `blockdevice` driver
 * It should be possible to mount this as a system storage instance using `storage.VfsFat` (THIS DOESN'T CURRENTLY WORK)
 
+The RAMFS driver is temporarily included for debugging (this works).
