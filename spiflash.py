@@ -12,10 +12,11 @@ WRITE_ENABLE    = b'\x06'
 CHIP_ERASE      = b'\xc7'
 WRITE_PAGE      = b'\x02'
 READ            = b'\x03'
-PAGE_SIZE       = 256
 ERASE_4K        = b'\x20'
 ERASE_32K       = b'\x52'
 ERASE_64K       = b'\xd8'
+
+PAGE_SIZE       = 256
 
 class SPIFlash:
 
@@ -139,22 +140,14 @@ class SPIFlashFS:
         if op == 4: # BP_IOCTL_SEC_COUNT
             return self.nblocks
         if op == 5: # BP_IOCTL_SEC_SIZE
-            return 512
-            # return self.blksize
+            return self.blksize
 
 spi = SPI(board.A5,board.A7,board.A6)
 cs = DigitalInOut(board.A0)
 flash = SPIFlash(spi,cs)
 
-from ramfs import RAMFS
-
-bdev_ram = RAMFS(50)
-storage.VfsFat.mkfs(bdev_ram)
-vfs_ram = storage.VfsFat(bdev_ram)
-storage.mount(vfs_ram,"/flash")
-
 bdev = SPIFlashFS(flash,2048)
 storage.VfsFat.mkfs(bdev)
 vfs = storage.VfsFat(bdev)
-storage.mount(vfs,"/flash")
+storage.mount(vfs,"/spiflash")
 
