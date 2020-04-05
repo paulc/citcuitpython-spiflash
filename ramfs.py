@@ -26,9 +26,7 @@ class RAMFS:
         if op == 5:  # BP_IOCTL_SEC_SIZE
             return self.SEC_SIZE
 
-# from ramfs import RAMFS
-# 
 # bdev_ram = RAMFS(50)
 # storage.VfsFat.mkfs(bdev_ram)
 # vfs_ram = storage.VfsFat(bdev_ram)
-# storage.mount(vfs_ram,"/flash")
+# storage.mount(vfs_ram,"/ram")
