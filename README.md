@@ -6,11 +6,11 @@ This module provides a simple SPI flash driver for Winbond W25QXX devices.
 
 The driver comprises two classes:
 
-## SPIFlash
+`SPIFlash`
 
 * `Raw` SPI flash driver 
 
-## SPIFlashFS
+`SPIFlashFS`
 
 * `blockdevice` driver
 * It shoukld be possible to mount this as a system storage instance using `storage.VfsFat` (THIS DOESN'T CURRENTLY WORK)
