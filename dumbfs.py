@@ -1,4 +1,8 @@
 
+###
+### WIP - NOT WORKING
+###
+
 import struct
 
 HEADER      = "8s24sIII20x"     # Magic, Label, Blocksize, NBlocks, FAT Blocks
